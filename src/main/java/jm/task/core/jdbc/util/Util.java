@@ -1,5 +1,6 @@
 package jm.task.core.jdbc.util;
 
+import jm.task.core.jdbc.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -34,6 +35,7 @@ public class Util {
                     .setProperty("hibernate.connection.url", URL)
                     .setProperty("hibernate.connection.username", LOGIN)
                     .setProperty("hibernate.connection.password", PASSWORD)
+                    .addAnnotatedClass(User.class)
                     .buildSessionFactory();
         }
         return sessionFactory;
